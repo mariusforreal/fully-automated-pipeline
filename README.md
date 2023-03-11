@@ -5,7 +5,7 @@
 
 ## CICD Applications setup
 1) ###### GitHub setup
-    Fork GitHub Repository by using the existing repo "devops-fully-automated" (https://github.com/cvamsikrishna11/devops-fully-automated)     
+    Fork GitHub Repository by using the existing repo "devops-fully-automated" (https://github.com/mariusforreal/fully-automated-pipeline)     
     - Go to GitHub (github.com)
     - Login to your GitHub Account
     - **Fork repository "fully-automated-pipeline" (https://github.com/mariusforreal/fully-automated-pipeline) & name it "fully-automated-pipeline"**
