@@ -8,7 +8,7 @@
     Fork GitHub Repository by using the existing repo "devops-fully-automated" (https://github.com/cvamsikrishna11/devops-fully-automated)     
     - Go to GitHub (github.com)
     - Login to your GitHub Account
-    - **Fork repository "devops-fully-automated" (https://github.com/cvamsikrishna11/devops-fully-automated) & name it "devops-fully-automated"**
+    - **Fork repository "fully-automated-pipeline" (https://github.com/mariusforreal/fully-automated-pipeline) & name it "fully-automated-pipeline"**
     - Clone your newly created repo to your local
 
 2) ###### Jenkins/Maven/Ansible
@@ -17,7 +17,7 @@
     - Security Group (Open): 8080, 9100 and 22 to 0.0.0.0/0
     - Key pair: Select or create a new keypair
     - **Attach Jenkins server with IAM role having "AdministratorAccess"**
-    - User data (Copy the following user data): https://github.com/cvamsikrishna11/devops-fully-automated/blob/installations/jenkins-maven-ansible-setup.sh
+    - User data (Copy the following user data): https://github.com/mariusforreal/fully-automated-pipeline-infra-scripts/blob/main/README.md
     - Launch Instance
     - After launching this Jenkins server, attach a tag as **Key=Application, value=jenkins**
 
@@ -26,7 +26,7 @@
     - Instance type: t2.medium
     - Security Group (Open): 9000, 9100 and 22 to 0.0.0.0/0
     - Key pair: Select or create a new keypair
-    - User data (Copy the following user data): https://github.com/cvamsikrishna11/devops-fully-automated/blob/installations/sonarqube-setup.sh
+    - User data (Copy the following user data): https://github.com/mariusforreal/fully-automated-pipeline-infra-scripts/blob/main/README.md
     - Launch Instance
 
 4) ###### Nexus
@@ -34,7 +34,7 @@
     - Instance type: t2.medium
     - Security Group (Open): 8081, 9100 and 22 to 0.0.0.0/0
     - Key pair: Select or create a new keypair
-    - User data (Copy the following user data): https://github.com/cvamsikrishna11/devops-fully-automated/blob/installations/nexus-setup.sh
+    - User data (Copy the following user data): https://github.com/mariusforreal/fully-automated-pipeline-infra-scripts/blob/main/README.md
     - Launch Instance
 
 5) ###### EC2 (Dev/Stage/Prod)
@@ -52,7 +52,7 @@
     - Security Group (Open): 9090 and 22 to 0.0.0.0/0
     - Key pair: Select or create a new keypair
     - **Attach Jenkins server with IAM role having "AmazonEC2ReadOnlyAccess"**
-    - User data (Copy the following user data): https://github.com/cvamsikrishna11/devops-fully-automated/blob/installations/prometheus-setup.sh
+    - User data (Copy the following user data): https://github.com/mariusforreal/fully-automated-pipeline-infra-scripts/blob/main/README.md
     - Launch Instance
 
 7) ###### Grafana
@@ -60,13 +60,13 @@
     - Instance type: t2.micro
     - Security Group (Open): 3000 and 22 to 0.0.0.0/0
     - Key pair: Select or create a new keypair
-    - User data (Copy the following user data): https://github.com/cvamsikrishna11/devops-fully-automated/blob/installations/grafana-setup.sh
+    - User data (Copy the following user data): https://github.com/mariusforreal/fully-automated-pipeline-infra-scripts/blob/main/README.md
     - Launch Instance
 
 8) ###### Slack 
-    - **Join the slack channel https://join.slack.com/t/devopsfullyau-r0x2686/shared_invite/zt-1nzxt7e9z-ChDASWBOysUpa3tH5gi95A**
-    - **Join into the channel "#team-devops"**
-    - Generate Team Subdomain & Integration Token Credential ID (workspace --> channel --> drop-down --> integrations --> Add an App --> Jenkins CI --> Click on Install/View --> Configuration --> Add to Slack --> Select Channel #team-devops --> Store Team subdomain & Integration Token Credential ID which can be used later on)
+    - **Join the slack channel (Create Channel and add if needed)
+    - **Join into the channel "#channel-name"**
+    - Generate Team Subdomain & Integration Token Credential ID (workspace --> channel --> drop-down --> integrations --> Add an App --> Jenkins CI --> Click on Install/View --> Configuration --> Add to Slack --> Select Channel #channel-name --> Store Team subdomain & Integration Token Credential ID which can be used later on)
 
 ### Jenkins setup
 1) #### Access Jenkins
@@ -113,7 +113,7 @@
         
         **Note:** By default the **Install Oracle Java SE Development Kit from the website** make sure to close that option by clicking on the image as shown below.
 
-        ![JDKSetup!](https://github.com/cvamsikrishna11/devops-fully-automated/blob/main/jdk_setup.png)
+      
 
         * Click on Add installer
         * Select Extract *.zip/*.tar.gz --> Fill the below values
@@ -290,7 +290,7 @@ Copy your Grafana Public IP Address and paste on the browser = http:://GrafanaSe
 ### GitHub webhook
 
 1) #### Add jenkins webhook to github
-    - Access your repo **devops-fully-automated** on github
+    - Access your repo **fully-automated-pipeline** on github
     - Goto Settings --> Webhooks --> Click on Add webhook 
     - Payload URL: **http://REPLACE-JENKINS-SERVER-PUBLIC-IP:8080/github-webhook/**             (Note: The IP should be public as GitHub is outside of the AWS VPC where Jenkins server is hosted)
     - Click on Add webhook
